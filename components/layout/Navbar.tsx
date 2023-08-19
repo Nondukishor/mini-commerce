@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Logo from "./Logo";
-import CartSVG from "../../shared/CartSVG";
+import Logo from "../Logo";
 import Link from "next/link";
 import { useAppSelector } from "../../redux/hook";
-
+import {AiFillShopping, AiFillContacts, AiFillExclamationCircle} from 'react-icons/ai'
 const Navbar = () => {
   const carts = useAppSelector(state=>state.cart.products)
   return (
@@ -15,12 +14,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto md:flex md:justify-between md:items-center">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center pt-6">
-              <Logo />{" "}
-              <span style={{ marginTop: "-50px", marginLeft: "-43px" }}>
-                ini E-commerce
-              </span>
-            </Link>
+            <Logo/>
             <div className="flex lg:hidden">
               <button
                 type="button"
@@ -64,43 +58,33 @@ const Navbar = () => {
 
           <div className="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
             <div className="flex flex-col md:flex-row md:mx-6">
+              
               <Link
                 className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
                 href="/"
               >
-                Home
+                <span className="inline-block"><AiFillShopping style={{display:'inline'}}/> Shop</span>
               </Link>
               <a
                 className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
                 href="#"
               >
-                Shop
+                <span className="inline-block"><AiFillContacts style={{display:'inline'}}/> Contact</span>
               </a>
               <a
                 className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
                 href="#"
               >
-                Contact
-              </a>
-              <a
-                className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
-                href="#"
-              >
-                About
+                <span className="inline-block"><AiFillExclamationCircle style={{display:'inline'}}/> About</span>
               </a>
               <Link
                 className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
                 href="/cart"
               >
-                <button
-                  type="button"
-                  className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Cart
-                  <span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
-                    {carts.length}
-                  </span>
-                </button>
+            <svg className="h-6 w-6 leading-none text-gray-300 stroke-current inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+             </svg>
+             <span className="pl-1 text-gray-500 text-md inline fill-stone-950 ">{carts.length}</span>
               </Link>
             </div>
           </div>

@@ -30,13 +30,12 @@ const Products = () => {
           <div className="flex flex-wrap -m-4">
             {filteredData?.map((product: IProduct) => (
               <div
-                className="relative lg:w-1/4 md:w-1/2 p-4 mb-2 w-full bg-white border rounded-md shadow-md hover:shadow-lg transition-shadow "
+                className="relative lg:w-1/4 md:w-1/2 p-4 mb-2 w-full bg-white shadow-md hover:shadow-lg transition-shadow "
                 key={"item" + product.id}
               >
                 <ProductCard
                   key={product.id}
                   product={product}
-                  isInCart={cartItems.find((p) => p.id == product.id)}
                 />
               </div>
             ))}
