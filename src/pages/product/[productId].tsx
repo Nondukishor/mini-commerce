@@ -13,8 +13,6 @@ const ProductDetails = () => {
   const { data: product }: UseQueryHookResult<any, any> = useSingleProductQuery(
     router.query.productId
   );
-  const cartItems = useAppSelector((state) => state.cart.products);
-  const isInCart = cartItems.find((p) => p.id == product?.id);
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
@@ -34,16 +32,14 @@ const ProductDetails = () => {
             </h1>
             <p className="leading-relaxed">{product?.description}</p>
             <div className="flex mt-4">
-              <span className="title-font font-medium text-2xl text-gray-900">
+              <span className="title-font font-medium text-2xl text-slate-500">
                 $ {product?.price}
               </span>
               <button
                 onClick={() => {
                   dispatch(addToCart(product));
                 }}
-                className={`flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded ${
-                  isInCart && "hidden"
-                }`}
+                className={`flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded`}
               >
                 Add to Cart
               </button>

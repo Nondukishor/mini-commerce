@@ -13,18 +13,18 @@ const CartSummary = ({ cartItems = [] }: { cartItems: IProduct[] }) => {
         cartItems.length == 0 ? "hidden" : ""
       }`}
     >
-      <h1 className="font-medium text-lg sm:text-xl">Order Summary</h1>
+      <h1 className="font-medium text-lg sm:text-xl text-black">Order Summary</h1>
 
-      <div className="border-b-[#ddd] border-b-[0.5px] py-2">Items</div>
+      <div className="border-b-[#ddd] border-b-[0.5px] py-2 text-black">Items</div>
 
       <div className="py-5 border-b-[#ddd] border-b-[0.5px]">
         {cartItems.map((product) => (
           <div key={product.id} className="flex justify-between mb-2">
             <div className="flex flex-col">
-              <h1>{product.title}</h1>
-              <p className="text-[grey] text-xs w-fit">{product.category}</p>
+              <h1 className="text-black">{product.title}</h1>
+              <p className="text-[grey] text-xs w-fit text-black">{product.category}</p>
             </div>
-            <h1 className="text-[#004] ">
+            <h1 className="text-[#004] text-black">
               {product.quantity} x ${product.price}
             </h1>
           </div>
@@ -32,9 +32,9 @@ const CartSummary = ({ cartItems = [] }: { cartItems: IProduct[] }) => {
       </div>
 
       <div className="py-5 mb-5 border-b-[#ddd] border-b-[0.5px]">
-        <h1>From:</h1>
+        <h1 className="text-black">From:</h1>
         <p className="text-[grey] mb-3">Badda, Dhaka, Bangladesh</p>
-        <h1>To:</h1>
+        <h1 className="text-black">To:</h1>
         <p className="text-[grey]">Badda, Dhaka, Bangladesh</p>
       </div>
 

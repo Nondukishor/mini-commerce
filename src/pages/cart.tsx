@@ -13,7 +13,7 @@ const Cart = () => {
       id="cart"
       className="flex flex-col flex-wrap sm:flex-row sm:flex-nowrap w-[80%] m-auto mt-[4%] gap-[5%] "
     >
-      <CartSection cartItems={cartItems} />
+      <CartSection/>
 
       <CartSummary cartItems={cartItems} />
     </div>
@@ -21,6 +21,6 @@ const Cart = () => {
 };
 
 Cart.getLayout = function getLayout(page: ReactElement) {
-  return <Layout children={page} title="home"></Layout>;
+  return <Layout children={page} title="home"/>;
 };
 export default Cart;

@@ -24,9 +24,7 @@ const ProductCard = ({ product, isInCart }: ProductCardProps) => {
         />
 
         <div
-          className={`cart-btn absolute top-3 right-0 p-1 text-[28px] bg-yellow-200 rounded-[0.3rem] hover:bg-primaryColor hover:text-white ${
-            isInCart && "hidden"
-          }`}
+          className={`cart-btn absolute top-3 right-0 p-1 text-[28px] bg-yellow-200 rounded-[0.3rem] hover:bg-primaryColor hover:text-white`}
           onClick={() => {
             dispatch(addToCart(product));
           }}

@@ -3,8 +3,10 @@ import React from "react";
 import Logo from "./Logo";
 import CartSVG from "../../shared/CartSVG";
 import Link from "next/link";
+import { useAppSelector } from "../../redux/hook";
 
 const Navbar = () => {
+  const carts = useAppSelector(state=>state.cart.products)
   return (
     <div className="relative bg-gray-100 dark:bg-gray-900">
       <nav
@@ -86,11 +88,19 @@ const Navbar = () => {
               >
                 About
               </a>
-            </div>
-
-            <div className="flex justify-center md:block">
-              <Link href={"/cart"}>
-                <CartSVG />
+              <Link
+                className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+                href="/cart"
+              >
+                <button
+                  type="button"
+                  className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Cart
+                  <span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+                    {carts.length}
+                  </span>
+                </button>
               </Link>
             </div>
           </div>

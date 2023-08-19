@@ -22,11 +22,11 @@ const CartItem = ({ product }: { product: IProduct }) => {
       </div>
 
       <div className="flex flex-[50%] flex-col gap-1">
-        <p className="text-[grey] w-[200px]">{category}</p>
-        <h1 className="text-textColor font-semibold">{title}</h1>
+        <p className="text-[grey] w-[200px] text-black">{category}</p>
+        <h1 className="text-textColor font-semibold text-black">{title}</h1>
       </div>
       <div className="actions border-l-[1px] border-lightGrey2 h-[85%] flex flex-col justify-between pl-5">
-        <div className="flex rounded-lg border border-[#ddd]">
+        <div className="flex rounded-lg border border-[#ddd] text-black">
           <button
             onClick={() => {
               quantity! > 1 && dispatch(removeOne(product));
