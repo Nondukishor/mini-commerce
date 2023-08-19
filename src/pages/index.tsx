@@ -7,7 +7,7 @@ const Home = () => {
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout childern={page} title="home" />;
+  return <Layout children={page} title="home" />;
 };
 
 export default Home;

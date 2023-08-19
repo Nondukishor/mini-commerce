@@ -21,6 +21,6 @@ const Cart = () => {
 };
 
 Cart.getLayout = function getLayout(page: ReactElement) {
-  return <Layout childern={page} title="home" />;
-}; 
-export default Cart
+  return <Layout children={page} title="home"></Layout>;
+};
+export default Cart;

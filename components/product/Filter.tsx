@@ -20,13 +20,13 @@ const Filter = () => {
   return (
     <div className="flex px-8  p-4">
       <div className="mr-4">
-        <label className="font-semibold">Categories: </label>
+        <label className="font-semibold text-black">Categories: </label>
         <select
           value={category}
           onChange={(e) => {
             setCategory(e.target.value);
           }}
-          className="p-2 border rounded-md"
+          className="p-2 border rounded-md text-black"
         >
           {categories.map((category: string) => (
             <option key={category} value={category}>

@@ -3,7 +3,7 @@
 import { useGetProductsQuery } from "../../redux/api/apiSlice";
 import Loader from "../../shared/Loader";
 import { ALL_CATEGORY, IProduct } from "../../utils/type";
-import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import {useAppSelector } from "../../redux/hook";
 import ProductCard from "./ProductCard";
 import Filter from "./Filter";
 

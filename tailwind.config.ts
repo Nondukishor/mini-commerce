@@ -4,8 +4,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -13,7 +11,8 @@ module.exports = {
       colors: {
         oceanblue: '#4682A9',
         cyan: '#F6F4EB',
-        toast:'#35A29F'
+        toast:'#35A29F',
+        black: "#000000"
       },
     },
     animation: {

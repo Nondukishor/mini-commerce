@@ -3,7 +3,6 @@ import React, { ReactElement } from "react";
 import Layout from "../../../components/layout";
 import { useRouter } from "next/router";
 import { useSingleProductQuery } from "../../../redux/api/apiSlice";
-import { IProduct } from "../../../utils/type";
 import { UseQueryHookResult } from "@reduxjs/toolkit/dist/query/react/buildHooks";
 import { useAppDispatch, useAppSelector } from "../../../redux/hook";
 import { addToCart } from "../../../redux/features/cart/cartSlice";
@@ -15,7 +14,7 @@ const ProductDetails = () => {
     router.query.productId
   );
   const cartItems = useAppSelector((state) => state.cart.products);
-  const isInCart = cartItems.find((p) => p.id == product.id);
+  const isInCart = cartItems.find((p) => p.id == product?.id);
 
   return (
     <section className="text-gray-600 body-font overflow-hidden">
@@ -57,7 +56,7 @@ const ProductDetails = () => {
 };
 
 ProductDetails.getLayout = function getLayout(page: ReactElement) {
-  return <Layout childern={page} title="home" />;
+  return <Layout children={page} title="home" />;
 };
 
 export default ProductDetails;
