@@ -13,7 +13,7 @@ const Layout:React.FC<LayoutProps> = ({ children, title }) => {
         <title>{title ? `${title}-Mini E-commerce` : 'Mini E-commerce'}</title>
       </Head>
       <Navbar/>
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen bg-white">{children}</main>
       <Footer />
 
     </>

@@ -4,7 +4,7 @@ import Layout from "../../../components/layout";
 import { useRouter } from "next/router";
 import { useSingleProductQuery } from "../../../redux/api/apiSlice";
 import { UseQueryHookResult } from "@reduxjs/toolkit/dist/query/react/buildHooks";
-import { useAppDispatch, useAppSelector } from "../../../redux/hook";
+import { useAppDispatch } from "../../../redux/hook";
 import { addToCart } from "../../../redux/features/cart/cartSlice";
 
 const ProductDetails = () => {
@@ -15,7 +15,7 @@ const ProductDetails = () => {
   );
 
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section className="text-gray-600 body-font overflow-hidden bg-white">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <img
@@ -24,7 +24,7 @@ const ProductDetails = () => {
             src={product?.image}
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-3">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">
+            <h2 className="text-sm title-font text-gray-500 tracking-widest text-black">
               {product?.category.toUpperCase()}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
